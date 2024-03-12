@@ -1,3 +1,14 @@
+import os
+from linebot import LineBotApi
+
+channel_access_token = os.getenv('CHANNEL_ACCESS_TOKEN')
+
+if channel_access_token is None:
+    print("錯誤: 未設置CHANNEL_ACCESS_TOKEN。")
+else:
+    line_bot_api = LineBotApi(channel_access_token)
+    # 其餘的代碼
+
 from flask import Flask, request, abort
 
 from linebot import (
